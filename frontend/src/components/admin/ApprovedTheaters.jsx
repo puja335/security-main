@@ -21,7 +21,7 @@ export default function ApprovedTheaters() {
     }, []);
 
     const filteredTheaters = theaters.filter(theater =>
-        theater.name.toLowerCase().includes(searchTheater.toLowerCase())
+        theater?.name.toLowerCase().includes(searchTheater.toLowerCase())
     );
 
     return (
@@ -52,10 +52,10 @@ export default function ApprovedTheaters() {
                                 <tr key={theater._id} className='border-t border-base-100'>
                                     <td>
                                         <div className=' w-auto h-12 flex items-center'>
-                                            <p className="font-bold">{theater.name.toUpperCase()}</p>
+                                            <p className="font-bold">{theater?.name.toUpperCase()}</p>
                                     </div>
                                     </td>
-                                    <td >{theater.owner.name}</td>
+                                    <td >{theater?.owner?.name ??""}</td>
                                     <td >{theater.location}</td>
                                     <td >{format(new Date(theater.createdAt), 'dd MMMM yyyy')}</td>
                                 </tr>
