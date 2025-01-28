@@ -12,7 +12,7 @@ export default function UserList() {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(`${baseUrl}/api/admin/all-users`,{withCredentials:true});
-        setUsers(response.data);
+        setUsers(response.data.data);
       } catch (error) {
         console.error('Error fetching users:', error);
       }
@@ -20,8 +20,9 @@ export default function UserList() {
 
     fetchUsers();
   }, []);
+  console.log(users, 'users');
 
-  const filteredUsers = users.filter(user =>
+  const filteredUsers = users?.filter(user =>
     user.name.toLowerCase().includes(searchUser.toLowerCase())
   );
 

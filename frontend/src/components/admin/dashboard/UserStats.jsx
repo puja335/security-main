@@ -11,7 +11,7 @@ export default function UserStats() {
     const fetchTotalUsers = async () => {
       try {
         const res = await axios.get(`${baseUrl}/api/admin/total-users`, { withCredentials: true });
-        setTotalUsers(res.data.totalUsers);
+        setTotalUsers(res.data.data);
       } catch (error) {
         console.log('Error fetching total users:', error.message);
       }
