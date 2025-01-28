@@ -1,33 +1,35 @@
-import AdminLogin from "../components/auth/Login"
-import AdminSignup from "../components/auth/Signup"
-import Hero from "../components/hero/Hero"
-import AdminLayout from "../layout/AdminLayout"
-import HomeLayout from "../layout/HomeLayout"
-import OwnerLayout from "../layout/OwnerLayout"
-import UserLayout from "../layout/UserLayout"
-import AdminDashboardPage from "../pages/admin/AdminDashboardPage"
-import ApprovedTheatersPage from "../pages/admin/ApprovedTheatersPage"
-import ApproveTheaterPage from "../pages/admin/ApproveTheaterPage"
-import MoviePages from "../pages/admin/MoviePage"
-import TransactionPage from "../pages/admin/TransactionPage"
-import UserPage from "../pages/admin/UserPage"
-import ErrorPage from "../pages/Errorpage"
-import LoginPage from "../pages/LoginPage"
-import MovieDetailPage from "../pages/MovieDetailPage"
-import MoviePage from "../pages/MoviePage"
-import AddTheaterPage from "../pages/owner/AddTheaterPage"
-import AllMoviePage from "../pages/owner/AllMoviePage"
-import MyTheaterPage from "../pages/owner/MyTheaterPage"
-import OwnerDashboardPage from "../pages/owner/OwnerDashboardPage"
-import ShowPage from "../pages/owner/ShowPage"
-import ShowSeatPage from "../pages/ShowSeatPage"
-import ShowsPage from "../pages/ShowsPage"
-import SignupPage from "../pages/SignupPage"
-import ViewBookingPage from "../pages/ViewBookingPage"
-import AdminRoutes from "../protectRoute/AdminRoutes"
-import AuthChecker from "../protectRoute/AuthChecker"
-import OwnerRoutes from "../protectRoute/OwnerRoutes"
-import UserRoutes from "../protectRoute/UserRoutes"
+import { EmailVerification } from "../components/auth/EmailVerificaiton";
+import AdminLogin from "../components/auth/Login";
+import { ResendVerification } from "../components/auth/ResendVerification";
+import AdminSignup from "../components/auth/Signup";
+import Hero from "../components/hero/Hero";
+import AdminLayout from "../layout/AdminLayout";
+import HomeLayout from "../layout/HomeLayout";
+import OwnerLayout from "../layout/OwnerLayout";
+import UserLayout from "../layout/UserLayout";
+import AdminDashboardPage from "../pages/admin/AdminDashboardPage";
+import ApprovedTheatersPage from "../pages/admin/ApprovedTheatersPage";
+import ApproveTheaterPage from "../pages/admin/ApproveTheaterPage";
+import MoviePages from "../pages/admin/MoviePage";
+import TransactionPage from "../pages/admin/TransactionPage";
+import UserPage from "../pages/admin/UserPage";
+import ErrorPage from "../pages/Errorpage";
+import LoginPage from "../pages/LoginPage";
+import MovieDetailPage from "../pages/MovieDetailPage";
+import MoviePage from "../pages/MoviePage";
+import AddTheaterPage from "../pages/owner/AddTheaterPage";
+import AllMoviePage from "../pages/owner/AllMoviePage";
+import MyTheaterPage from "../pages/owner/MyTheaterPage";
+import OwnerDashboardPage from "../pages/owner/OwnerDashboardPage";
+import ShowPage from "../pages/owner/ShowPage";
+import ShowSeatPage from "../pages/ShowSeatPage";
+import ShowsPage from "../pages/ShowsPage";
+import SignupPage from "../pages/SignupPage";
+import ViewBookingPage from "../pages/ViewBookingPage";
+import AdminRoutes from "../protectRoute/AdminRoutes";
+import AuthChecker from "../protectRoute/AuthChecker";
+import OwnerRoutes from "../protectRoute/OwnerRoutes";
+import UserRoutes from "../protectRoute/UserRoutes";
 
 export const routes = [
   {
@@ -52,6 +54,16 @@ export const routes = [
             <SignupPage />
           </AuthChecker>
         ),
+      },
+      {
+        path: "/verify-email",
+        element: <EmailVerification />,
+        //       <Route path="/verify-email" element={<EmailVerification />} />
+        // <Route path="/resend-verification" element={<ResendVerification />} />
+      },
+      {
+        path: "/resend-verification",
+        element: <ResendVerification />,
       },
       {
         path: "/admin/login",
@@ -227,4 +239,4 @@ export const routes = [
       },
     ],
   },
-]
+];
