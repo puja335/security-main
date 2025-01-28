@@ -18,7 +18,7 @@ router.get('/all-movies',authenticateAdmin,Movies);
 router.get('/all-users',authenticateAdmin,getAllUsers);
 router.get('/approved-theaters',authenticateAdmin,getApprovedTheaters);
 router.get('/not-approved-theaters',authenticateAdmin,notApprovedTheaters);
-router.put('/approve-theater/:id',authenticateAdmin,approveTheater);
+router.post('/approve-theater/:id',authenticateAdmin,approveTheater);
 router.get('/check-admin',authenticateAdmin,checkAdmin )
 router.get('/transactions',authenticateAdmin,Transactions);
 
