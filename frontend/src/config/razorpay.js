@@ -10,7 +10,13 @@ export const createOrder = async (amount,selectedSeats,showId) => {
 };
 
 export const handlePayment = async (order, callback) => {
-  const response = await axios.get(`${baseUrl}/api/user/get-user`, { withCredentials: true });
+  const response = await axios.get(`${baseUrl}/api/user/get-user`, { withCredentials: true,
+    headers:{
+      "Authorization":`Bearer ${localStorage.getItem("token")}`
+    }
+   },
+  
+  );
   const userData = response.data;
   
 
